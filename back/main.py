@@ -1,9 +1,11 @@
 from flask import Flask, request, render_template
 from flask_cors import CORS, cross_origin
-import openai
+from openai import OpenAI
 from key import key
 
-openai.api_key = key
+client = OpenAI(
+    api_key=key
+)
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -19,6 +21,14 @@ def my_form():
 @app.route('/summarize', methods=['POST'])
 def my_form_post():
     text = request.form['text']
-    completion = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": f"Summarize the following for me: {text}"}])
+    completion = client.chat.completions.create(
+        model="gpt-3.5-turbo", 
+        messages=[
+            {
+                "role": "user", 
+                "content": f"Summarize the following for me: {text}"
+            }
+        ]
+    )
 
     return completion.choices[0].message.content

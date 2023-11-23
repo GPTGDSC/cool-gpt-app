@@ -9,10 +9,23 @@ function App() {
   return (
     <>
       <div>
-      <h1>Text summarizer</h1>
-        <div id="paste-summarize-container">
-          <TextInput/>
-          <button className='button-5'id='summarize-button'>Summarize</button>
+        <div id='header-container'>
+          <h1>Text summarizer</h1>
+          <p>Summarize your files</p>
+        </div>
+        <div id='main-content-container'>
+          <div id="paste-summarize-container">
+          <div className="upload-btn-wrapper">
+            <button className="upload-btn">Upload a file</button>
+            <input type="file" name="myfile" />
+          </div>
+            <p>...or paste your text here</p>
+            <TextInput/>
+            <button className='button-5'id='summarize-button'>Summarize</button>
+          </div>
+          <div id='output-summarize-container'>
+
+          </div>
         </div>
       </div>
         

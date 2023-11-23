@@ -1,15 +1,73 @@
+:root{
+    --button-primary: rgb(0, 146, 168);
+    --button-secondary: #ffffff;
+    --button-hover: #32ccfb;
+}
+
 h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#paste-summarize-container {
-    margin-left: 50px;
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
 }
+
+#header-container {
+    margin-left: 30px;
+}
+
+#paste-summarize-container {
+    margin-left: 100px;
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    transition: all 250ms;
+}
+  
+.upload-btn {
+    border: 2px solid var(--button-primary);
+    color: var(--button-primary);
+    background-color: var(--button-secondary);
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 250ms;
+}
+
+.upload-btn-wrapper:hover .upload-btn,
+.upload-btn-wrapper:focus .upload-btn{
+    border:2px solid var(--button-hover);
+    color: var(--button-hover)
+}
+
+.upload-btn-wrapper:hover,
+.upload-btn-wrapper:focus{
+    box-shadow: rgba(0, 0, 0, .1) 0 2px 4px;
+}
+
+.upload-btn-wrapper:active {
+    background-color: #c85000;
+    box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+    transform: translateY(0);
+  }
+  
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
 
 .button-5 {
   align-items: center;
   background-clip: padding-box;
-  background-color: #fa6400;
+  background-color: var(--button-primary);
   border: 1px solid transparent;
   border-radius: .25rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
@@ -37,7 +95,7 @@ h1 {
 
 .button-5:hover,
 .button-5:focus {
-  background-color: #fb8332;
+  background-color: var(--button-hover);
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 

@@ -1,9 +1,20 @@
 import './App.css'
 
+import axios from "axios"
+
 import TextInput from './components/TextInput'
 import TextOutput from './components/textOutput'
 
 function App() {
+
+  const handleBtnClick = async () => {
+    const response = await axios({
+      method: "GET",
+      url: "http://127.0.0.1:5000/",
+    })
+    console.log(response) 
+    
+  }
 
   return (
 
@@ -20,7 +31,11 @@ function App() {
           </div>
             <p>...or paste your text here</p>
             <TextInput/>
-            <button className='button-5'id='summarize-button'>Summarize</button>
+            <button 
+              className='button-5'
+              id='summarize-button'
+              onClick={handleBtnClick}
+            >Summarize</button>
           </div>
           <div id='output-summarize-container'>
             <TextOutput/>

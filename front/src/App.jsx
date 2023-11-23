@@ -1,18 +1,16 @@
 import './App.css'
 
-import axios from "axios"
-
 import TextInput from './components/TextInput'
 import TextOutput from './components/textOutput'
+import api from './services/api'
 
 function App() {
 
   const handleBtnClick = async () => {
-    const response = await axios({
-      method: "GET",
-      url: "http://127.0.0.1:5000/",
-    })
-    console.log(response) 
+    
+    console.log(api.summarizeText("the aj loks around and i am in orange suits but gpt is pretty cool"));
+    
+    
     
   }
 

@@ -9,7 +9,11 @@ function App() {
   return (
     <>
       <div>
-        <TextInput/>
+      <h1>Text summarizer</h1>
+        <div id="paste-summarize-container">
+          <TextInput/>
+          <button className='button-5'id='summarize-button'>Summarize</button>
+        </div>
       </div>
         
     </>

@@ -26,7 +26,7 @@ def my_form_post():
         messages=[
             {
                 "role": "user", 
-                "content": f"Summarize the following for me: {text}"
+                "content": f"Summarize the following for me: \"{text}\""
             }
         ]
     )

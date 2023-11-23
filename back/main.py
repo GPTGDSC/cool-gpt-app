@@ -20,7 +20,7 @@ def my_form():
 
 @app.route('/summarize', methods=['POST'])
 def my_form_post():
-    text = request.form['text']
+    text = request.form['content']
     completion = client.chat.completions.create(
         model="gpt-3.5-turbo", 
         messages=[

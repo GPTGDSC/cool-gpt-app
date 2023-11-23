@@ -2,7 +2,7 @@ const TextOutput = () => {
     return (
         <div>
             <div id='text-output'>
-                placeholder
+                <p>Output goes here</p>
             </div>
         </div>
     )

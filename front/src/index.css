@@ -4,17 +4,18 @@
     --button-hover: #32ccfb;
 }
 
-h1 {
+* {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 15px;
-}
 
 #header-container {
-    margin-left: 30px;
+    padding-left: 30px;
+}
+
+#main-content-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 #paste-summarize-container {
@@ -118,8 +119,8 @@ textarea {
     background: #f1fbff;
     box-shadow: 0px 0px 5px grey;
     display: block;
-    height: 400px;
-    width: 400px;
+    height: 500px;
+    width: 500px;
     opacity: 0.7;
     transition: 0.3s;
     resize: none;
@@ -140,4 +141,16 @@ textarea:focus-visible {
 
 textarea::-webkit-input-placeholder {
     vertical-align: top;
+}
+
+#output-summarize-container {
+    margin-right: 200px;
+    border: 2px solid var(--button-primary);
+    height: 600px;
+    width: 600px;
+    border-radius: 10px;
+}
+
+#text-output {
+    padding: 20px;
 }

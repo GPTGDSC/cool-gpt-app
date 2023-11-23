@@ -1,14 +1,16 @@
 from flask import Flask, request, render_template
+from flask_cors import CORS, cross_origin
 import openai
 from key import key
 
 openai.api_key = key
 
 app = Flask(__name__)
+cors = CORS(app)
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return {'data': 'if you dont see this then its broken'}
 
 @app.route('/summarize')
 def my_form():

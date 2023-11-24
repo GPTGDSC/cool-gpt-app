@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 
 import TextInput from './components/TextInput'
@@ -5,13 +6,13 @@ import TextOutput from './components/textOutput'
 import api from './services/api'
 
 function App() {
+  const [outputText, setOutputText] = useState('Output appears here')
+  const [inputText, setInputText] = useState('')
 
   const handleBtnClick = async () => {
-    
-    console.log(api.summarizeText("the aj loks around and i am in orange suits but gpt is pretty cool"));
-    
-    
-    
+    const response = await api.summarizeText(inputText)
+
+    setOutputText(response.data);
   }
 
   return (
@@ -28,7 +29,7 @@ function App() {
             <input type="file" name="myfile" />
           </div>
             <p>...or paste your text here</p>
-            <TextInput/>
+            <TextInput setInputText={setInputText}/>
             <button 
               className='button-5'
               id='summarize-button'
@@ -36,7 +37,7 @@ function App() {
             >Summarize</button>
           </div>
           <div id='output-summarize-container'>
-            <TextOutput/>
+            <TextOutput outputText={outputText}/>
           </div>
         </div>
       </div>

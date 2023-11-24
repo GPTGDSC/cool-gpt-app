@@ -2,6 +2,8 @@
     --button-primary: rgb(0, 89, 190);
     --button-secondary: #ffffff;
     --button-hover: #2cceff;
+    --button-active:#f4985b;
+    
     --default-background: #1f004a;
     --default-foreground: white;
 }
@@ -50,16 +52,20 @@
     color: var(--button-hover)
 }
 
+.upload-btn-wrapper:active .upload-btn {
+    color: var(--button-active);
+    border: 2px solid var(--button-active);
+}
+
 .upload-btn-wrapper:hover,
 .upload-btn-wrapper:focus{
     box-shadow: rgba(0, 0, 0, .1) 0 2px 4px;
 }
 
 .upload-btn-wrapper:active {
-    background-color: #c85000;
     box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
     transform: translateY(0);
-  }
+}
   
   .upload-btn-wrapper input[type=file] {
     font-size: 100px;
@@ -67,7 +73,7 @@
     left: 0;
     top: 0;
     opacity: 0;
-  }
+}
 
 .button-5 {
   align-items: center;

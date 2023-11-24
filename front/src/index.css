@@ -1,11 +1,15 @@
 :root{
-    --button-primary: rgb(0, 146, 168);
+    --button-primary: rgb(0, 89, 190);
     --button-secondary: #ffffff;
-    --button-hover: #32ccfb;
+    --button-hover: #2cceff;
+    --default-background: #1f004a;
+    --default-foreground: white;
 }
 
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--default-background);
+    color: var(--default-foreground);
 }
 
 
@@ -32,7 +36,7 @@
 .upload-btn {
     border: 2px solid var(--button-primary);
     color: var(--button-primary);
-    background-color: var(--button-secondary);
+    background-color: var(--default-background);
     padding: 8px 20px;
     border-radius: 8px;
     font-size: 20px;
@@ -73,7 +77,7 @@
   border-radius: .25rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
   box-sizing: border-box;
-  color: #fff;
+  color: var(--default-foreground);
   cursor: pointer;
   display: inline-flex;
   font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;

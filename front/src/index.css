@@ -1,10 +1,10 @@
 :root{
-    --button-primary: rgb(0, 89, 190);
+    --button-primary: rgb(24, 111, 211);
     --button-secondary: #ffffff;
     --button-hover: #2cceff;
     --button-active:#f4985b;
 
-    --default-background: #1f004a;
+    --default-background: #433d5e;
     --default-foreground: white;
 }
 

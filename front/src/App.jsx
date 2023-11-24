@@ -36,6 +36,9 @@ function App() {
               onClick={handleBtnClick}
             >Summarize</button>
           </div>
+          <div 
+            className="lds-roller"
+          ><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
           <div id='output-summarize-container'>
             <TextOutput outputText={outputText}/>
           </div>

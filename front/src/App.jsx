@@ -9,11 +9,17 @@ function App() {
   const [outputText, setOutputText] = useState('Output appears here')
   const [inputText, setInputText] = useState('')
 
+  const [showSpinner, setShowSpinner] = useState(false);
+
   const handleBtnClick = async () => {
+    setShowSpinner(true);
     const response = await api.summarizeText(inputText)
 
     setOutputText(response.data);
+    setShowSpinner(false);
   }
+
+  const style = showSpinner ? {} : {display: 'none'} 
 
   return (
 
@@ -38,6 +44,7 @@ function App() {
           </div>
           <div 
             className="lds-roller"
+            style={style}
           ><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
           <div id='output-summarize-container'>
             <TextOutput outputText={outputText}/>

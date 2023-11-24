@@ -156,5 +156,6 @@ textarea::-webkit-input-placeholder {
 }
 
 #text-output {
-    padding: 20px;
+    margin:10px;
+    padding: 10px;
 }

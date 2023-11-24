@@ -1,5 +1,5 @@
 :root{
-    --button-primary: rgb(24, 111, 211);
+    --button-primary: rgb(194, 172, 255);
     --button-secondary: #ffffff;
     --button-hover: #2cceff;
     --button-active:#f4985b;
@@ -24,6 +24,10 @@
     justify-content: space-between;
 }
 
+#sidebar {
+  margin-left: 20px;
+}
+
 #paste-summarize-container {
     margin-left: 100px;
 }
@@ -33,6 +37,7 @@
     overflow: hidden;
     display: inline-block;
     transition: all 250ms;
+    margin-bottom: 10px;
 }
   
 .upload-btn {
@@ -154,7 +159,8 @@ textarea::-webkit-input-placeholder {
 }
 
 #output-summarize-container {
-    margin-right: 200px;
+    margin-top: 55px;
+    margin-right: 100px;
 }
 
 #text-output {

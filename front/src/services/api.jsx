@@ -1,11 +1,11 @@
 import axios from "axios"
 const baseUrl = "http://127.0.0.1:5000"
 
-const summarizeText = (text) => {
+const summarizeText = async (text) => {
     const summaryObject = {
         content: text 
     }
-    return axios.post(`${baseUrl}/summarize`, summaryObject)
+    return await axios.post(`${baseUrl}/summarize`, summaryObject)
 }
 
 export default { 

@@ -2,6 +2,7 @@
     --button-primary: rgb(0, 146, 168);
     --button-secondary: #ffffff;
     --button-hover: #32ccfb;
+    --button-click: #c85000;
 }
 
 * {
@@ -52,7 +53,7 @@
 }
 
 .upload-btn-wrapper:active {
-    background-color: #c85000;
+    background-color: var(--button-click);
     box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
     transform: translateY(0);
   }

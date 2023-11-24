@@ -5,7 +5,8 @@ const TextOutput = ({ outputText }) => {
     return (
         <div>
             <textarea 
-                placeholder="Output comes out here" 
+                id='output-textarea'
+                placeholder='Output comes out here' 
                 value={outputText}>
             </textarea>
         </div>

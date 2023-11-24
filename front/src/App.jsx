@@ -9,17 +9,21 @@ function App() {
   const [outputText, setOutputText] = useState('Output appears here')
   const [inputText, setInputText] = useState('')
 
-  const [showSpinner, setShowSpinner] = useState(false);
+  const [busy, setbusy] = useState(false);
 
   const handleBtnClick = async () => {
-    setShowSpinner(true);
+    if (busy) {
+      return
+    }
+    
+    setbusy(true);
     const response = await api.summarizeText(inputText)
 
     setOutputText(response.data);
-    setShowSpinner(false);
+    setbusy(false);
   }
 
-  const style = showSpinner ? {} : {display: 'none'} 
+  const style = busy ? {} : {display: 'none'} 
 
   return (
 

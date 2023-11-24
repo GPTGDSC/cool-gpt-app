@@ -8,7 +8,7 @@ client = OpenAI(
 )
 
 app = Flask(__name__)
-cors = CORS(app)
+CORS(app)
 
 @app.route("/")
 def hello_world():
@@ -20,7 +20,8 @@ def my_form():
 
 @app.route('/summarize', methods=['POST'])
 def my_form_post():
-    text = request.form['content']
+    data = request.get_json()
+    text = data['content']
     completion = client.chat.completions.create(
         model="gpt-3.5-turbo", 
         messages=[

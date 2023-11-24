@@ -7,7 +7,7 @@ const TextInput = ({ setInputText }) => {
     return (
         <div>
             <textarea 
-                placeholder="Enter text here..."
+                placeholder="...or paste your text here"
                 onChange={handleChange}
             ></textarea>
                 

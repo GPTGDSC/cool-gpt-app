@@ -1,6 +1,8 @@
-const TextInput = () => {
+import PropTypes from 'prop-types'
+
+const TextInput = ({ setInputText }) => {
     const handleChange = (event) => {
-        console.log(`${event.target.value}!!!!`)
+        setInputText(event.target.value)
     }
     return (
         <div>
@@ -11,6 +13,10 @@ const TextInput = () => {
                 
         </div>
     )
+}
+
+TextInput.propTypes = {
+    setInputText: PropTypes.func.isRequired
 }
 
 export default TextInput;

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 
-import TextInput from './components/TextInput'
+import TextInput from './components/textInput'
 import TextOutput from './components/textOutput'
 import api from './services/api'
 

@@ -4,9 +4,10 @@ const TextOutput = ({ outputText }) => {
 
     return (
         <div>
-            <div id='text-output'>
-                <p>{outputText}</p>
-            </div>
+            <textarea 
+                placeholder="Output comes out here" 
+                value={outputText}>
+            </textarea>
         </div>
     )
 }

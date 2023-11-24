@@ -6,7 +6,7 @@ import TextOutput from './components/textOutput'
 import api from './services/api'
 
 function App() {
-  const [outputText, setOutputText] = useState('Output appears here')
+  const [outputText, setOutputText] = useState('')
   const [inputText, setInputText] = useState('')
 
   const handleBtnClick = async () => {

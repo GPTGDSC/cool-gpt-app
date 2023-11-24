@@ -9,11 +9,21 @@ function App() {
   const [outputText, setOutputText] = useState('Output appears here')
   const [inputText, setInputText] = useState('')
 
+  const [busy, setbusy] = useState(false);
+
   const handleBtnClick = async () => {
+    if (busy) {
+      return
+    }
+    
+    setbusy(true);
     const response = await api.summarizeText(inputText)
 
     setOutputText(response.data);
+    setbusy(false);
   }
+
+  const style = busy ? {} : {display: 'none'} 
 
   return (
 
@@ -36,6 +46,10 @@ function App() {
               onClick={handleBtnClick}
             >Summarize</button>
           </div>
+          <div 
+            className="lds-roller"
+            style={style}
+          ><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
           <div id='output-summarize-container'>
             <TextOutput outputText={outputText}/>
           </div>

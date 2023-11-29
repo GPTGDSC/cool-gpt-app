@@ -4,10 +4,10 @@
     --button-hover: #2cceff;
     --button-active:#f4985b;
 
-    --default-background: #433d5e;
+    --default-background: #5b537e;
     --default-foreground: white;
 
-    --sidebar-background: grey;
+    --sidebar-background: rgb(30, 30, 30);
 }
 
 * {
@@ -29,7 +29,6 @@ html, body, #root, #main {
     display: flex;
     justify-content: space-between;
     height: 100%;
-    background-color: red;
 }
 
 #sidebar {
@@ -37,6 +36,10 @@ html, body, #root, #main {
   width: 35vh;
   background-color: var(--sidebar-background);
   overflow: hidden;
+}
+
+#sidebar * {
+  background-color: var(--sidebar-background);
 }
 
 #paste-summarize-container {

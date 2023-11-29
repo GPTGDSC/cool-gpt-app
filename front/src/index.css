@@ -25,10 +25,9 @@ html, body, #root, #main {
     padding-left: 30px;
 }
 
-#main-content-container {
+#main {
     display: flex;
     justify-content: space-between;
-    height: 100%;
 }
 
 #sidebar {

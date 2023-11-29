@@ -117,6 +117,7 @@ html, body, #root, #main {
   justify-content: center;
   line-height: 1.25;
   margin: 0;
+  margin-top: 10px;
   min-height: 3rem;
   padding: calc(.875rem - 1px) calc(1.5rem - 1px);
   position: relative;
@@ -159,7 +160,6 @@ textarea {
     opacity: 0.7;
     transition: 0.3s;
     resize: none;
-    margin-bottom: 30px;
 }
 
 textarea:hover {
@@ -191,10 +191,9 @@ textarea::-webkit-input-placeholder {
 .lds-roller {
     display: inline-block;
     position: relative;
-    width: 80px;
-    height: 80px;
-    margin-top: 20px;
-    margin-left: 20px;
+    width: 20px;
+    height: 20px;
+    margin-left: 70px;
   }
   .lds-roller div {
     animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;

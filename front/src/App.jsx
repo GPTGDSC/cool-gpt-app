@@ -32,25 +32,27 @@ function App() {
         <h1>Quick sum</h1>
         <p>Summarize your files</p>
       </div>
-      <div id="paste-summarize-container">
-        <div className="upload-btn-wrapper">
-          <button className="upload-btn">Upload a file</button>
-          <input type="file" name="myfile" />
+      <div id="main-content">
+        <div id="paste-summarize-container">
+          <div className="upload-btn-wrapper">
+            <button className="upload-btn">Upload a file</button>
+            <input type="file" name="myfile" />
+          </div>
+          <TextInput setInputText={setInputText} />
+          <button
+            className='button-5'
+            id='summarize-button'
+            onClick={handleBtnClick}
+          >Summarize</button>
+          <div
+            className="lds-roller"
+            style={style}
+          ><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         </div>
-        <TextInput setInputText={setInputText} />
-        <button
-          className='button-5'
-          id='summarize-button'
-          onClick={handleBtnClick}
-        >Summarize</button>
-      </div>
-      <div
-        className="lds-roller"
-        style={style}
-      ><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
-      <div id='output-summarize-container'>
-        <TextOutput outputText={outputText} />
+        <div id='output-summarize-container'>
+          <TextOutput outputText={outputText} />
+        </div>
       </div>
     </div>  
   )

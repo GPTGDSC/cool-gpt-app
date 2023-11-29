@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import './App.css'
 
-import TextInput from './components/TextInput'
+import TextInput from './components/textInput'
 import TextOutput from './components/textOutput'
 import api from './services/api'
 
 function App() {
-  const [outputText, setOutputText] = useState('Output appears here')
+  const [outputText, setOutputText] = useState('')
   const [inputText, setInputText] = useState('')
 
   const [busy, setbusy] = useState(false);
@@ -15,7 +15,7 @@ function App() {
     if (busy) {
       return
     }
-    
+
     setbusy(true);
     const response = await api.summarizeText(inputText)
 
@@ -23,38 +23,38 @@ function App() {
     setbusy(false);
   }
 
-  const style = busy ? {} : {display: 'none'} 
+  const style = busy ? {} : { display: 'none' }
 
   return (
 
-      <div id='main'>
-        <div id='header-container'>
-          <h1>Thoughtful summarizer</h1>
-          <p>Summarize your files</p>
-        </div>
-        <div id='main-content-container'>
-          <div id="paste-summarize-container">
+    <div id='main'>
+      <div id="sidebar">
+        <h1>Quick sum</h1>
+        <p>Summarize your files</p>
+      </div>
+      <div id="main-content">
+        <div id="paste-summarize-container">
           <div className="upload-btn-wrapper">
             <button className="upload-btn">Upload a file</button>
             <input type="file" name="myfile" />
           </div>
-            <p>...or paste your text here</p>
-            <TextInput setInputText={setInputText}/>
-            <button 
-              className='button-5'
-              id='summarize-button'
-              onClick={handleBtnClick}
-            >Summarize</button>
-          </div>
-          <div 
+          <TextInput setInputText={setInputText} />
+          <button
+            className='button-5'
+            id='summarize-button'
+            onClick={handleBtnClick}
+          >Summarize</button>
+          <div
             className="lds-roller"
             style={style}
           ><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-          <div id='output-summarize-container'>
-            <TextOutput outputText={outputText}/>
-          </div>
+        </div>
+
+        <div id='output-summarize-container'>
+          <TextOutput outputText={outputText} />
         </div>
       </div>
+    </div>  
   )
 }
 

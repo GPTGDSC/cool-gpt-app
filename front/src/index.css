@@ -1,26 +1,54 @@
 :root{
-    --button-primary: rgb(0, 146, 168);
+    --button-primary: rgb(194, 172, 255);
     --button-secondary: #ffffff;
-    --button-hover: #32ccfb;
-    --button-click: #c85000;
+    --button-hover: #2cceff;
+    --button-active:#f4985b;
+
+    --default-background: #5b537e;
+    --default-foreground: white;
+
+    --sidebar-background: rgb(30, 30, 30);
 }
 
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--default-background);
+    color: var(--default-foreground);
 }
 
+html, body, #root, #main {
+  height: 100%;
+  margin: 0px;
+}
 
 #header-container {
     padding-left: 30px;
 }
 
-#main-content-container {
+#main {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+}
+
+#main-content {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#sidebar {
+  padding-left: 20px;
+  width: 35vh;
+  background-color: var(--sidebar-background);
+  overflow: hidden;
+}
+
+#sidebar * {
+  background-color: var(--sidebar-background);
 }
 
 #paste-summarize-container {
-    margin-left: 100px;
+    margin-left: 50px;
 }
 
 .upload-btn-wrapper {
@@ -28,12 +56,13 @@
     overflow: hidden;
     display: inline-block;
     transition: all 250ms;
+    margin-bottom: 10px;
 }
   
 .upload-btn {
     border: 2px solid var(--button-primary);
     color: var(--button-primary);
-    background-color: var(--button-secondary);
+    background-color: var(--default-background);
     padding: 8px 20px;
     border-radius: 8px;
     font-size: 20px;
@@ -47,6 +76,11 @@
     color: var(--button-hover)
 }
 
+.upload-btn-wrapper:active .upload-btn {
+    color: var(--button-active);
+    border: 2px solid var(--button-active);
+}
+
 .upload-btn-wrapper:hover,
 .upload-btn-wrapper:focus{
     box-shadow: rgba(0, 0, 0, .1) 0 2px 4px;
@@ -56,7 +90,7 @@
     background-color: var(--button-click);
     box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
     transform: translateY(0);
-  }
+}
   
   .upload-btn-wrapper input[type=file] {
     font-size: 100px;
@@ -64,7 +98,7 @@
     left: 0;
     top: 0;
     opacity: 0;
-  }
+}
 
 .button-5 {
   align-items: center;
@@ -74,7 +108,7 @@
   border-radius: .25rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
   box-sizing: border-box;
-  color: #fff;
+  color: var(--default-foreground);
   cursor: pointer;
   display: inline-flex;
   font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -83,6 +117,7 @@
   justify-content: center;
   line-height: 1.25;
   margin: 0;
+  margin-top: 10px;
   min-height: 3rem;
   padding: calc(.875rem - 1px) calc(1.5rem - 1px);
   position: relative;
@@ -120,17 +155,15 @@ textarea {
     background: #f1fbff;
     box-shadow: 0px 0px 5px grey;
     display: block;
-    height: 500px;
-    width: 500px;
+    height: 70vh;
+    width: 70vh;
     opacity: 0.7;
     transition: 0.3s;
     resize: none;
-    margin-bottom: 30px;
 }
 
 textarea:hover {
-    box-shadow: 0px 0px 10px grey;
-    box-shadow: 0px 0px 10px rgb(129, 175, 171);
+    box-shadow: 0px 0px 10px var(--button-hover);
 }
 
 textarea:focus-visible {
@@ -145,24 +178,22 @@ textarea::-webkit-input-placeholder {
 }
 
 #output-summarize-container {
-    margin-right: 200px;
-    border: 2px solid var(--button-primary);
-    height: 600px;
-    width: 600px;
-    border-radius: 10px;
+    margin-top: 55px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 #text-output {
-    padding: 20px;
+    margin:10px;
+    padding: 10px;
 }
 
 .lds-roller {
     display: inline-block;
     position: relative;
-    width: 80px;
-    height: 80px;
-    margin-top: 20px;
-    margin-left: 20px;
+    width: 20px;
+    height: 20px;
+    margin-left: 70px;
   }
   .lds-roller div {
     animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
@@ -175,7 +206,7 @@ textarea::-webkit-input-placeholder {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: var(--button-primary);
+    background: var(--default-foreground);
     margin: -4px 0 0 -4px;
   }
   .lds-roller div:nth-child(1) {

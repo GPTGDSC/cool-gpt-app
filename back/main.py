@@ -14,6 +14,13 @@ CORS(app)
 def hello_world():
     return {'data': 'if you dont see this then its broken'}
 
+@app.route('/upload-pdf', methods=['POST'])
+def upload_pdf():
+    print("ASDASDJASKLLSADJKLJDASKLJKLADSJLKASJKDJKASDLJ")
+    print(request.files)
+
+    return {'data': 'gotcha'}
+
 @app.route('/summarize')
 def my_form():
     return render_template('summariser-page.html')

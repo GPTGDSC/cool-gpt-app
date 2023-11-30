@@ -1,4 +1,4 @@
-import { PDFDocument } from 'pdfjs-dist'
+import api from '../services/api'
 
 const FileUpload = () => {
     const handleFileChange = async (event) => {
@@ -7,27 +7,8 @@ const FileUpload = () => {
         if (file == null) {
           return;
         }
-    
-        try {
-            const reader = new FileReader()
-            reader.onload = async (e) => {
-                const contents = e.target.result
-                const pdf = await PDFDocument.load(contents)
-                const pages = pdf.getPages()
-                let extractedText = ''
-          
-                for (const page of pages) {
-                    const textContent = await page.getTextContent()
-                    const pageText = textContent.items.map((item) => item.str).join(' ')
-                    extractedText += pageText
-                }
-
-                console.log(extractedText);
-            }
-        } catch (error) {
-          console.log('PDF Parsing error', error)
-        }
         
+        api.uploadFile(file)
       }
     
     return (

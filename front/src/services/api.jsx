@@ -12,11 +12,13 @@ const uploadFile = async (file) => {
     let formData = new FormData()
     formData.append('pdf', file)
 
-    return await axios.post(
+    const response = await axios.post(
         `${baseUrl}/upload-pdf`, 
         formData,
         {headers: {'Content-Type': 'multipart/form-data'}}
-    )
+    ) 
+
+    return response.data
 }
 
 export default { 

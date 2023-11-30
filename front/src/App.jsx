@@ -3,6 +3,7 @@ import './App.css'
 
 import TextInput from './components/textInput'
 import TextOutput from './components/textOutput'
+import FileUpload from './components/fileUpload'
 import api from './services/api'
 
 function App() {
@@ -36,9 +37,9 @@ function App() {
         <div id="paste-summarize-container">
           <div className="upload-btn-wrapper">
             <button className="upload-btn">Upload a file</button>
-            <input type="file" name="myfile" />
+            <FileUpload setInputText={setInputText}/>
           </div>
-          <TextInput setInputText={setInputText} />
+          <TextInput setInputText={setInputText} inputText={inputText} />
           <button
             className='button-5'
             id='summarize-button'

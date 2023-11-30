@@ -7,7 +7,8 @@ const TextOutput = ({ outputText }) => {
             <textarea 
                 id='output-textarea'
                 placeholder='Output comes out here' 
-                value={outputText}>
+                value={outputText}
+                readOnly={true}>
             </textarea>
         </div>
     )

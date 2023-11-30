@@ -8,6 +8,20 @@ const summarizeText = async (text) => {
     return await axios.post(`${baseUrl}/summarize`, summaryObject)
 }
 
+const uploadFile = async (file) => {
+    let formData = new FormData()
+    formData.append('pdf', file)
+
+    const response = await axios.post(
+        `${baseUrl}/upload-pdf`, 
+        formData,
+        {headers: {'Content-Type': 'multipart/form-data'}}
+    ) 
+
+    return response.data
+}
+
 export default { 
-    summarizeText
+    summarizeText,
+    uploadFile
  }

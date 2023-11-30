@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types'
 
-const TextInput = ({ setInputText }) => {
+const TextInput = ({ setInputText, inputText }) => {
     const handleChange = (event) => {
-        setInputText(event.target.value)
+        setInputText(event.target.value) 
     }
     return (
         <div>
             <textarea 
                 placeholder="...or paste your text here"
                 onChange={handleChange}
+                value={inputText}
             ></textarea>
                 
         </div>
@@ -16,7 +17,8 @@ const TextInput = ({ setInputText }) => {
 }
 
 TextInput.propTypes = {
-    setInputText: PropTypes.func.isRequired
+    setInputText: PropTypes.func.isRequired,
+    inputText: PropTypes.string
 }
 
 export default TextInput;

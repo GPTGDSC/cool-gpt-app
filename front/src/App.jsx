@@ -37,9 +37,9 @@ function App() {
         <div id="paste-summarize-container">
           <div className="upload-btn-wrapper">
             <button className="upload-btn">Upload a file</button>
-            <FileUpload/>
+            <FileUpload setInputText={setInputText}/>
           </div>
-          <TextInput setInputText={setInputText} />
+          <TextInput setInputText={setInputText} inputText={inputText} />
           <button
             className='button-5'
             id='summarize-button'

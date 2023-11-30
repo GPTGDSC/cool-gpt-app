@@ -28,10 +28,7 @@ def hello_world():
 
 @app.route('/upload-pdf', methods=['POST'])
 def upload_pdf():
-    print(request.files['pdf'])
-
     text = extractPDFText(request.files['pdf'])
-    print(text)
 
     return text
 

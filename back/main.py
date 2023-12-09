@@ -23,13 +23,13 @@ def extractPDFText(file):
     return text, 200
 
 def getConciseString(conciseness: str) -> str | int:
-    if conciseness == "bulletpoint-short":
+    if conciseness == "bullet-short":
         return "with very concise bullet points"
-    elif conciseness == "bulletpoint-detail":
+    elif conciseness == "bullet-detail":
         return "in detail with bullet points"
-    elif conciseness == "paragraph-short":
+    elif conciseness == "para-short":
         return "with a very concise paragraph"
-    elif conciseness == "paragraph-detail":
+    elif conciseness == "para-detail":
         return "in detail with a paragraph"
     else:
         return -1
@@ -66,7 +66,7 @@ def my_form_post():
         messages=[
             {
                 "role": "user", 
-                "content": f"Summarize the following for me {detail}: \"{text}\""
+                "content": f"Imagine you are a student taking notes. Summarize the following for me {detail}: \"{text}\""
             }
         ]
     )

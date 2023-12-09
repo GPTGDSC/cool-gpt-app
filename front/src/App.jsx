@@ -4,11 +4,14 @@ import './App.css'
 import TextInput from './components/textInput'
 import TextOutput from './components/textOutput'
 import FileUpload from './components/fileUpload'
+import SummarizeLevel from './components/summarizeLevel'
+
 import api from './services/api'
 
 function App() {
   const [outputText, setOutputText] = useState('')
   const [inputText, setInputText] = useState('')
+  const [conciseness, setConciseness] = useState('bullet-short')
 
   const [busy, setbusy] = useState(false);
 
@@ -16,9 +19,9 @@ function App() {
     if (busy) {
       return
     }
-
+   
     setbusy(true);
-    const response = await api.summarizeText(inputText)
+    const response = await api.summarizeText(inputText, conciseness)
 
     setOutputText(response.data);
     setbusy(false);
@@ -32,6 +35,7 @@ function App() {
       <div id="sidebar">
         <h1>Quick sum</h1>
         <p>Summarize your files</p>
+        <SummarizeLevel setConciseness={setConciseness}/>
       </div>
       <div id="main-content">
         <div id="paste-summarize-container">

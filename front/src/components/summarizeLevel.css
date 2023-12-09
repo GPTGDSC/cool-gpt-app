@@ -1,8 +1,12 @@
+:root{
+    --button-primary: rgb(194, 172, 255);
+}
+
 .container {
-    --s: 1em;     /* control the size */
-    --g: 10px;    /* the gap */
-    --c: #009688; /* the active color */
-    
+    --s: 1em;    
+    --g: 10px;    
+    --c: var(--button-primary); 
+    margin-left: 40px;
     display: grid;
     grid-auto-rows: 1fr;
     gap: var(--g);

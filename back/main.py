@@ -19,8 +19,20 @@ def extractPDFText(file):
         for page_num in range(len(pdf_reader.pages)):
             text += pdf_reader.pages[page_num].extract_text()
     except Exception as e:
-        return str(e)
-    return text
+        return str(e), 500
+    return text, 200
+
+def getConciseString(conciseness: str) -> str | int:
+    if conciseness == "bulletpoint-short":
+        return "with very concise bullet points"
+    elif conciseness == "bulletpoint-detail":
+        return "in detail with bullet points"
+    elif conciseness == "paragraph-short":
+        return "with a very concise paragraph"
+    elif conciseness == "paragraph-detail":
+        return "in detail with a paragraph"
+    else:
+        return -1
 
 @app.route("/")
 def hello_world():
@@ -39,15 +51,24 @@ def my_form():
 @app.route('/summarize', methods=['POST'])
 def my_form_post():
     data = request.get_json()
+    if 'content' not in data or 'concise' not in data:
+        return 'Missing JSON key(s)', 400
+    
     text = data['content']
+    conciseness = data['concise']
+    detail = getConciseString(conciseness)
+
+    if detail == -1:
+        return "Invalid conciseness level", 400
+
     completion = client.chat.completions.create(
         model="gpt-3.5-turbo", 
         messages=[
             {
                 "role": "user", 
-                "content": f"Summarize the following for me: \"{text}\""
+                "content": f"Summarize the following for me {detail}: \"{text}\""
             }
         ]
     )
 
-    return completion.choices[0].message.content
+    return completion.choices[0].message.content, 200

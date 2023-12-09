@@ -4,6 +4,8 @@ import './App.css'
 import TextInput from './components/textInput'
 import TextOutput from './components/textOutput'
 import FileUpload from './components/fileUpload'
+import SummarizeLevel from './components/summarizeLevel'
+
 import api from './services/api'
 
 function App() {
@@ -32,6 +34,7 @@ function App() {
       <div id="sidebar">
         <h1>Quick sum</h1>
         <p>Summarize your files</p>
+        <SummarizeLevel/>
       </div>
       <div id="main-content">
         <div id="paste-summarize-container">

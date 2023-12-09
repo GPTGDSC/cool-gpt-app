@@ -51,11 +51,11 @@ def my_form():
 @app.route('/summarize', methods=['POST'])
 def my_form_post():
     data = request.get_json()
-    if 'content' not in data or 'concise' not in data:
+    if 'content' not in data or 'conciseness' not in data:
         return 'Missing JSON key(s)', 400
     
     text = data['content']
-    conciseness = data['concise']
+    conciseness = data['conciseness']
     detail = getConciseString(conciseness)
 
     if detail == -1:

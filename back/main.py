@@ -3,10 +3,12 @@ from flask_cors import CORS, cross_origin
 from openai import OpenAI
 from key import key
 
+import os
+
 import PyPDF2
 
 client = OpenAI(
-    api_key=key
+    api_key=os.environ.get("openAIKey")
 )
 
 app = Flask(__name__)

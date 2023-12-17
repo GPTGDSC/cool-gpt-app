@@ -6,7 +6,7 @@ const summarizeText = async (text, conciseness) => {
     const summaryObject = {
         content: text,
         conciseness: conciseness,
-        key: process.env.REACT_APP_SUMMARIZE_KEY
+        key: process.env.SUMMARIZE_KEY
     }
 
     console.log("TEST", summaryObject);

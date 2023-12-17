@@ -8,7 +8,7 @@ const summarizeText = async (text, conciseness) => {
     const summaryObject = {
         content: text,
         conciseness: conciseness,
-        key: process.env.SUMMARIZE_KEY
+        key: import.meta.env.SUMMARIZE_KEY
     }
 
     console.log("TEST", summaryObject);

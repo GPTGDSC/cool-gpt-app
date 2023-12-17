@@ -1,10 +1,14 @@
 import axios from "axios"
+import dotenv from 'dotenv'
+
 const baseUrl = "https://quicksum.onrender.com/"
+dotenv.config()
 
 const summarizeText = async (text, conciseness) => {
     const summaryObject = {
         content: text,
-        conciseness: conciseness
+        conciseness: conciseness,
+        summarizeKey: process.env.REACT_APP_SUMMARIZE_KEY
     }
     return await axios.post(`${baseUrl}/summarize`, summaryObject)
 }

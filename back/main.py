@@ -10,6 +10,8 @@ client = OpenAI(
     api_key=os.environ.get("openAIKey")
 )
 
+summarizeKey = os.environ.get("summarizeKey")
+
 app = Flask(__name__)
 CORS(app)
 
@@ -52,8 +54,11 @@ def my_form():
 @app.route('/summarize', methods=['POST'])
 def my_form_post():
     data = request.get_json()
-    if 'content' not in data or 'conciseness' not in data:
+    if 'content' not in data or 'conciseness' not in data or 'key' not in data:
         return 'Missing JSON key(s)', 400
+    
+    if data['key'] != summarizeKey:
+        return "Invalid key", 400
     
     text = data['content']
     conciseness = data['conciseness']

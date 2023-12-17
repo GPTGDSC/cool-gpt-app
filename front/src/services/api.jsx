@@ -8,7 +8,7 @@ const summarizeText = async (text, conciseness) => {
     const summaryObject = {
         content: text,
         conciseness: conciseness,
-        summarizeKey: process.env.REACT_APP_SUMMARIZE_KEY
+        key: process.env.REACT_APP_SUMMARIZE_KEY
     }
     return await axios.post(`${baseUrl}/summarize`, summaryObject)
 }

@@ -1,8 +1,6 @@
 import axios from "axios"
-import dotenv from 'dotenv'
 
 const baseUrl = "https://quicksum.onrender.com/"
-dotenv.config()
 
 const summarizeText = async (text, conciseness) => {
     const summaryObject = {

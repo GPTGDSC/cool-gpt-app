@@ -30,7 +30,7 @@
     gap: 10px;
     cursor: pointer;
   }
-  input {
+  .summarize-input {
     height: var(--s);
     aspect-ratio: 1;
     border: calc(var(--s)/8) solid var(--_c,#939393);
@@ -45,24 +45,24 @@
     margin: 0;
     transition: .3s;
   }
-  input:checked {
+  .summarize-input:checked {
     --_c: var(--c);
   }
-  .container:not(:has(input:checked)):before {
+  .container:not(:has(.summarize-input:checked)):before {
     --_i: -1;
     opacity: 0;
   }
-  .container:has(input:checked):before {
+  .container:has(.summarize-input:checked):before {
     opacity: 1;
     transform: translateY(calc(var(--_i)*(var(--s) + var(--g))))
   }
-  .container:has(label:nth-child(1) input:checked):before {--_i:0;--_x:.02px}
-  .container:has(label:nth-child(2) input:checked):before {--_i:1;--_x:.04px}
-  .container:has(label:nth-child(3) input:checked):before {--_i:2;--_x:.06px}
-  .container:has(label:nth-child(4) input:checked):before {--_i:3;--_x:.08px}
-  .container:has(label:nth-child(5) input:checked):before {--_i:4;--_x:.1px}
+  .container:has(label:nth-child(1) .summarize-input:checked):before {--_i:0;--_x:.02px}
+  .container:has(label:nth-child(2) .summarize-input:checked):before {--_i:1;--_x:.04px}
+  .container:has(label:nth-child(3) .summarize-input:checked):before {--_i:2;--_x:.06px}
+  .container:has(label:nth-child(4) .summarize-input:checked):before {--_i:3;--_x:.08px}
+  .container:has(label:nth-child(5) .summarize-input:checked):before {--_i:4;--_x:.1px}
   
-  input:disabled {
+  .summarize-input:disabled {
     background: 
        linear-gradient(#939393 0 0) 
        50%/100% 20% no-repeat content-box;
@@ -70,7 +70,7 @@
     cursor: not-allowed;
   }
   @media print {
-    input[type=radio] {
+    .summarize-input[type=radio] {
       -webkit-appearance: auto;
       -moz-appearance: auto;
       appearance: auto;
@@ -81,7 +81,7 @@
     .container:before {
       display: none;
     }
-    input:checked {
+    .summarize-input:checked {
       --_c: var(--c);
       background: var(--c) content-box;
     }

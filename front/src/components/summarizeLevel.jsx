@@ -7,10 +7,10 @@ const SummarizeLevel = ({ setConciseness }) => {
     }
     return (
         <div className="container" onChange={handleRadioSelect}>
-            <label><input type="radio" name="e" value='bullet-short' defaultChecked/> Short bullets</label>
-            <label><input type="radio" name="e" value='bullet-detail' /> Detailed bullets</label>
-            <label><input type="radio" name="e" value='para-short' /> Short paragraph</label>
-            <label><input type="radio" name="e" value='para-detail' /> Detailed Paragraph</label>
+            <label><input className="summarize-input" type="radio" name="e" value='bullet-short' defaultChecked/> Short bullets</label>
+            <label><input className="summarize-input" type="radio" name="e" value='bullet-detail' /> Detailed bullets</label>
+            <label><input className="summarize-input" type="radio" name="e" value='para-short' /> Short paragraph</label>
+            <label><input className="summarize-input" type="radio" name="e" value='para-detail' /> Detailed Paragraph</label>
         </div>
     )
 }

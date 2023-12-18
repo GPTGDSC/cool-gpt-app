@@ -55,7 +55,7 @@ def my_form():
 def my_form_post():
     data = request.get_json()
     if 'content' not in data or 'conciseness' not in data or 'key' not in data:
-        return 'Missing JSON key(s)', 400
+        return "Posted data missing key(s)", 400
     
     if data['key'] != summarizeKey:
         return "Invalid key", 400

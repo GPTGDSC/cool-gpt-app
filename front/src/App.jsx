@@ -33,7 +33,7 @@ function App() {
 
     <div id='main'>
       <div id="sidebar">
-        <h1>Quick sum</h1>
+        <h1>Ez sum</h1>
         <p>Summarize your files</p>
         <SummarizeLevel setConciseness={setConciseness}/>
       </div>

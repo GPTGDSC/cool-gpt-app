@@ -9,7 +9,12 @@ const summarizeText = async (text, conciseness) => {
         key: import.meta.env.VITE_SUMMARIZE_KEY
     }
     
-    return await axios.post(`${baseUrl}/summarize`, summaryObject)
+    try {
+        return await axios.post(`${baseUrl}/summarize`, summaryObject)
+    } catch (e) {
+        console.log("Failed to post to summarize", e);
+        return ""
+    }
 }
 
 const uploadFile = async (file) => {

@@ -6,7 +6,7 @@ const summarizeText = async (text, conciseness) => {
     const summaryObject = {
         content: text,
         conciseness: conciseness,
-        key: import.meta.env.SUMMARIZE_KEY
+        key: import.meta.env.VITE_SUMMARIZE_KEY
     }
 
     console.log("TEST", summaryObject);

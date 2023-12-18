@@ -8,8 +8,6 @@ const summarizeText = async (text, conciseness) => {
         conciseness: conciseness,
         key: import.meta.env.VITE_SUMMARIZE_KEY
     }
-
-    console.log("TEST", summaryObject);
     
     return await axios.post(`${baseUrl}/summarize`, summaryObject)
 }

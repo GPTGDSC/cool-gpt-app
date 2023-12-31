@@ -1,4 +1,4 @@
-﻿# cool-gpt-app
+﻿# ez-sum
 
 A GPT Wrapper built with Vite + React.js and a Flask backend!
 
